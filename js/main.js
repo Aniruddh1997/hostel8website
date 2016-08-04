@@ -55,6 +55,11 @@ $(document).ready(function(){
 		if($("#dummy_header").is(":visible")){
 			if($(window).scrollTop() >= 51){
 				$("#main_header")[0].style.top = "0px";
+				$(".nav_headers").each(function(){
+					$(this)[0].style.paddingTop = '12px';
+					$(this)[0].style.paddingBottom = '12px';
+				})
+
 				$("#main_header").animate({
 					height : "50px"
 				},10)
@@ -68,6 +73,11 @@ $(document).ready(function(){
 			else if($(window).scrollTop() < 51){
 				var height = 51 - $(window).scrollTop();
 				$("#main_header")[0].style.top = height + "px";
+				$(".nav_headers").each(function(){
+					$(this)[0].style.paddingTop = '25px';
+					$(this)[0].style.paddingBottom = '25px';
+				})
+				
 				$("#main_header").animate({
 					height : "80px"
 				},10)
@@ -80,6 +90,7 @@ $(document).ready(function(){
 			}
 			else{
 				$("#main_header")[0].style.top = "51px";
+
 				$("#main_header").animate({
 					height : "80px"
 				},10)

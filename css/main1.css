@@ -1531,3 +1531,29 @@ ul.breadcrumb {
     outline: none;
 
 }
+
+.nav_headers{
+    color: #000;
+    padding: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;  
+}
+
+.nav_headers:hover{
+    color: #1ABB9C
+}
+
+.carousel-control i{
+    position: relative;
+    top: 50%;
+}
+
+#recent_updates{
+    /*margin-left: 65px;*/
+    margin-right: 50px;
+}
+
+.gallery_nav{
+    list-style: none;
+}
