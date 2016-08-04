@@ -1554,6 +1554,44 @@ ul.breadcrumb {
     margin-right: 50px;
 }
 
-.gallery_nav{
+.gallery_nav ul{
     list-style: none;
+    padding-left: 0;
+    font-size: 15px;
+}
+
+.gallery_nav{
+    padding-left: 65px;
+}
+
+.gallery_nav h2{
+    margin-top: 0;
+}
+
+.mess_header{
+    background-color: #EDEDED;
+    margin: 15px 50px;
+    /*padding :20px;*/
+    font-size: 16px;
+    height: 55px;
+}
+
+.mess_header i{
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    padding: 18px;
+    height:55px;
+}
+
+.mess_day{
+    padding: 18px
+}
+
+.mess_menu{
+    margin : 0 50px;
+}
+
+.mess_menu h3{
+    margin: 0;
 }
