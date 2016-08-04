@@ -1,0 +1,93 @@
+
+    <div id="panel_fixed_header">
+        <ul class="" style="padding-left: 0;">
+
+            <li class= "Room active_panel_header_li" onclick="room_click()"><a><img src="images/home.svg" onerror="this.onerror=null; this.src='icons/home.png'" width = '60px' height="40px"></a></li>
+            <li class= "Window" onclick="window_click()"><a><img src="images/window.svg" onerror="this.onerror=null; this.src='icons/window.png'" width = '60px' height="40px"></a></li>
+            <li class= "Door" onclick="door_click()"><a><img src="images/door.svg" onerror="this.onerror=null; this.src='icons/door.png'" width = '60px' height="40px"></a></li>
+            <li class= "Texture" onclick="texture_click()"><a><img src="images/project.svg" onerror="this.onerror=null; this.src='icons/project.png'" width = '60px' height="40px"></a></li>
+
+        </ul>
+    </div>
+
+    <div class="panel" id="info">
+        
+        <div class="panel_content">
+            <!-- <ul class="panel_options" id="Project" >
+                <li><a onclick="new_project()"><i class="fa fa-lg fa-file"></i> &nbsp &nbsp New Project</a>
+                </li>                   
+                <li><a onclick="save_project()"><i class="fa fa-lg fa-save"></i> &nbsp &nbsp Save Project</a>
+                </li>                    
+                <li><a ng-click="load_project_table()"><i class="fa fa-lg fa-download"></i>  &nbsp &nbsp Load Project</a>
+                </li> 
+            </ul> -->
+
+            <div id = "Texture" style="display: none;">
+                <img src="floorplan_icons/texture1.jpg" width = "90px" height="90px" onclick="change_texture(0)">
+                <img src="floorplan_icons/texture2.jpg" width = "90px" height="90px" onclick="change_texture(1)">
+                <img src="floorplan_icons/texture3.jpg" width = "90px" height="90px" onclick="change_texture(2)">
+                <img src="floorplan_icons/texture4.jpg" width = "90px" height="90px" onclick="change_texture(3)">
+            </div>
+
+            <div class="panel_options" id="Room">
+                <img src="floorplan_icons/blueprints-01.svg" onerror="this.onerror=null; this.src='floorplan_icons/blueprints-01.png'" onclick="room_design('squareRoom')">
+                <!-- <img src="floorplan_icons/L top left.svg" onerror="this.onerror=null; this.src='floorplan_icons/L top left.png'" onclick="room_design('lTopLeft')">
+                <img src="floorplan_icons/L top right.svg" onerror="this.onerror=null; this.src='floorplan_icons/L top right.png'" onclick="room_design('lTopRight')">
+                <img src="floorplan_icons/L bottom left.svg" onerror="this.onerror=null; this.src='floorplan_icons/L bottom left.png'" onclick="room_design('lBottomLeft')">
+                <img src="floorplan_icons/L bottom right.svg" onerror="this.onerror=null; this.src='floorplan_icons/L bottom right.png'" onclick="room_design('lBottomRight')">
+                <img src="floorplan_icons/U shape.svg" onerror="this.onerror=null; this.src='floorplan_icons/U shape.png'" onclick="room_design('uRoom')"> -->
+            </div>
+
+           <!--  <ul class="panel_options" id="Window" style="display: none;">
+                <li><a onclick="add_window()"> Add Window</a>
+                </li>                                                       
+                
+            </ul> -->
+
+            <div id="Window" style="display: none;">
+                <img src="images/windows/4.jpg" width = "90px" height="90px" onclick="add_window(4)">
+                <img src="images/windows/5.jpg" width = "90px" height="90px" onclick="add_window(5)">
+                <img src="images/windows/6.jpg" width = "90px" height="90px" onclick="add_window(6)">
+                <img src="images/windows/11.jpg" width = "90px" height="90px" onclick="add_window(11)">
+            </div>
+
+            <!-- <ul class="panel_options" id="Door" style="display: none;">
+                <li><a onclick="add_door()"> Add Door</a>
+                </li>                   
+                                  
+            </ul> -->
+
+            <div id="Door" style="display: none;">
+                <img src="images/doors/5.jpg" width = "90px" height="90px" onclick="add_door(5)">
+                <img src="images/doors/9.jpg" width = "90px" height="90px" onclick="add_door(9)">
+                <img src="images/doors/11.jpg" width = "90px" height="90px" onclick="add_door(11)">
+                <img src="images/doors/13.jpg" width = "90px" height="90px" onclick="add_door(13)">
+            </div>
+
+            <div id="modifyCompartment" style="display: none">
+            </div>
+
+            <div id="room_colors" style="display: none;">
+            </div>
+
+            <ul class="panel_options" id="rightClickMenu" style="display: none">
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="nav_menu">
+        <nav class="" role="navigation">
+            <ul class="nav navbar-right">
+                <li id = "3D_2D" style = "cursor: pointer; "><a class="tooltip" ng-click = "generate_room()" ><span style="font-weight: bold;font-size: 20px;">3D</span><span class="tooltiptext">Change View</span></a>
+                </li>
+                <li id = "metricSystem" style = "cursor: pointer;margin-top: -4px; "><a class="tooltip" onclick = "change_metric_system()"><span style="font-weight: bold;font-size: 22px;"><center>ft</center></span><span class="tooltiptext">Toggle Dimension Unit</span></a>
+                </li>
+                <!-- <li style = "cursor: pointer;"><a onclick="split_wall()" class="tooltip"><i class="fa fa-2x fa-share-alt"><span class="tooltiptext">Split wall</span></i>  </a>
+                </li> -->
+                <li style = "cursor: pointer;"><a ng-click="logout_func()" class="tooltip"><i class="fa fa-2x fa-sign-out"><span class="tooltiptext">Logout</span></i> </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+

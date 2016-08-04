@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Infurnia B2C</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Lato:900,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+	<link rel="stylesheet" href="dist/css/bootstrap-material-design.css">
+	<!-- <link rel="stylesheet" href="dist/css/ripples.css"> -->
+	<link rel="stylesheet" href="css/angucomplete-alt.css">
+	<link href="css/bootstrap-switch.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/main1.css">
+	<link rel="stylesheet" href="css/card.css">	
+	
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="js/angular-route.js"></script>
+	<script src="js/controller/app.js"></script>
+	<script src="js/combobox.js"></script>
+	<script src="js/angucomplete-alt.js"></script>
+    <script src="js/p5.min.js"></script>
+    <script src="js/p5.dom.js"></script>
+    <script src="js/floorplannerpanel.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+    <style type="text/css">
+
+        #canvas {
+            background-color: #fff;
+            width:  100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            position: static; /* fixed or static */
+            top: 0px;
+            left: 0px;
+        }
+
+        .alertify-message {
+            color: #000;
+            font-size: 14px;
+        }
+
+        #alertify-ok {
+            margin-left: 20px
+        }
+
+    </style>
+
+
+</head>
+<body ng-app ="myApp" ng-controller = "myCtrl">
+
+
+		<!-- <div class="row">
+			<div class="col-sm-6 col-md-6">
+				<p><span class="mail"><i class="fa fa-envelope-o"></i>info@reen.com</span> <i class="fa fa-mobile-phone fa-lg"></i>+00 (123) 456 78 90</p>
+			</div>
+			<div class="col-sm-6 col-md-6">
+				<ul class="social pull-right">
+					<li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				</ul>
+			</div>
+		</div> -->
+		<div class="hidden-sm hidden-xs">
+			<div class= "navbar navbar-default navbar-static-top" role="navigation" id="dummy_header">
+				<div class="container">
+					<div class="row">
+
+						<div class="col-md-8">
+							<div id = "contact" class="navbar">
+								<ul class="nav navbar-nav">
+									<li><a href=""><i class="fa fa-phone"></i> 08041219904</a></li>
+									<li><a href=""><i class="fa fa-envelope"></i> info@infurnia.com</a></li>
+								</ul>
+							</div>
+						</div>	
+
+						<div class="col-md-4">
+							<div id = "social" class="navbar">
+								<ul class="nav navbar-nav navbar-right">
+									<li> <a href="http://www.facebook.com/infurnia" target="_blank" ><i class="fa fa-facebook"></i></a></li>
+									<li><a href="https://twitter.com/Infurnia" target="_blank"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="https://www.youtube.com/channel/UCqWfT7gLhGCdxS0IAHQS-bw" target="_blank"><i class="fa fa-youtube"></i></a></li>
+									<li><a href="https://www.linkedin.com/company/infurnia" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+									<li><a href="https://www.instagram.com/infurniafurnishings" target="_blank" ><i class="fa fa-instagram"></i></a></li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class= "navbar navbar-default navbar-fixed-top" role="navigation" id="main_header">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-sm-3">
+						<div class="navbar-header">
+							<img src="images/logo.jpg">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target = ".navbar-collapse">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+					</div>
+
+					<div class="col-sm-9">
+						<div class="navbar-collapse collapse">
+							<ul class="nav navbar-nav">
+								<li class="dropdown" id = "dropdown1">
+						          <a data-target="#" class="dropdown-toggle" data-toggle="dropdown" style="margin-left: 5px;">Modular Kitchen
+						            &nbsp;<i class="fa fa-lg fa-angle-down"></i></a>
+						        	<ul class="dropdown-menu">
+						        	 	<li>All Categories
+							            <div class="border_bottom"></div></li>
+							            <li>Straight
+							            <div class="border_bottom"></div></li>
+							            <li>Parallel
+							            <div class="border_bottom"></div></li>
+							            <li>L-Shaped				            
+							            <div class="border_bottom"></div></li>
+							            <li>U-Shaped				            
+							            <div class="border_bottom"></div></li>
+						    		</ul>
+						        </li>
+						        <li><a id ="starting_pt" ng-click = "starting_pt_click()">Create Your Own Design</a>
+						          <!-- <a data-target="#" class="dropdown-toggle" data-toggle="dropdown">Search By Category
+						            &nbsp<i class="fa fa-lg fa-angle-down"></i></a>
+						        	<ul class="dropdown-menu">
+							            <li>All
+							            <div class="border_bottom"></div></li>
+							            <li>Wardrobes
+							            <div class="border_bottom"></div></li>
+							            <li>Kitchens				            
+							            <div class="border_bottom"></div></li>
+						    		</ul> -->
+						        </li>
+						        <li class="dropdown hidden-md hidden-lg" id = "dropdown3" style = "display: none;">
+						          <a data-target="#" class="dropdown-toggle" data-toggle="dropdown">Account
+						            &nbsp;<i class="fa fa-lg fa-angle-down"></i></a>
+						        	<ul class="dropdown-menu">
+							            <li>Change Email
+							            <div class="border_bottom"></div></li>
+							            <li>Change Password
+							            <div class="border_bottom"></div></li>
+							            <li>Feedback					            
+							            <div class="border_bottom"></div></li>
+							            <li ng-click="logout_func()">Log Out				            
+							            <div class="border_bottom"></div>
+						    		</ul>
+						        </li>
+						        <li id="dropdown4" class="hidden-md hidden-lg"><a> Login/Signup</a></li>
+							</ul>
+
+
+
+							<div class="pull-right" style="height: 80px;">
+
+								<!-- <div class="list-group hidden-xs hidden-sm" id = "user_info">
+								 	<div class="list-group-item" id="account1">
+								    	<div class="row-picture pull-right">
+								      		<img class="circle" src="images/user-shape.svg">
+								    	</div>
+								    	<div class="row-content pull-right" style="margin: 10px;">
+								      		<h4 class="list-group-item-heading" style = "transform:translateY(50%)">Aniruddh</h4>
+								    	</div>
+								  	</div>
+								</div> -->
+
+								<div class="list-group hidden-xs hidden-sm" id = "user_info">
+								 	<div class="list-group-item" id = "account2" style = "cursor:pointer;" onclick="account2_click()">
+								    	<div class="row-picture pull-right" style = "padding-right:0;">
+								      		<img class="circle" src="images/user-shape.svg">
+								    	</div>
+								    	<div class="row-content pull-right" style = "margin: 10px;padding-right: 10px;">
+								      		<h4 class="list-group-item-heading" style = "transform:translateY(50%)">Login/Signup</h4>
+								    	</div>
+								  	</div>
+								</div>
+
+								<ul class="dropdown-menu" id="account_dropdown">
+									<li >Change Email <i class="pull-right fa fa-lg fa-envelope"></i><div class="border_bottom"></div></li>
+									<li >Change Password <i class="pull-right fa fa-lg fa-lock"></i><div class="border_bottom"></div></li>
+									<li >Feedback <i class="pull-right fa fa-lg fa-comment"></i><div class="border_bottom"></div></li>
+									<li ng-click="logout_func()">Log Out <i class="pull-right fa fa-lg fa-power-off"></i><div class="border_bottom"></div></li>
+								</ul>
+							</div>
+						</div>
+					</div>	
+
+				</div>
+			</div>
+		</div>
+	<div class="container" style = "z-index: 1000;">
+		<div class="row"><br/><br/><br/></div>
+	</div>
+
+
+
+	
+	<div class="container-fluid">
+		<div class="row"><br/></div>
+
+		<div class="row" id="logged_in_tabs">
+			<div class="tabbable"> <!-- Only required for left/right tabs -->
+               	<ul class="nav nav-tabs">
+                	<li class="active"><a href = "#design_themes" data-toggle="tab">FEATURED DESIGNS</a></li>
+                	<li><a href="#best_seller" data-toggle="tab">BEST SELLER</a></li>
+                	<li><a href="#most_viewed" data-toggle="tab">MOST VIEWED</a></li>
+                	<li><a href="#wishlist" data-toggle="tab">MY WISHLIST</a></li>
+                    
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="design_themes">
+	                    <div class="container-fluid">
+	                    	<div class="row"> 
+								<div class="col-md-4 card_container">
+										
+										<div class="card" ng-click = "visible('description')">
+							                <div class="card-image">
+							                    <img class="img-responsive" src="images/ImageRender1.jpg">
+							                    <!-- <span class="card-title">Material Cards</span> -->
+							                </div>
+							                
+							                <div class="card-content pull-left">
+							                    <p class="pull-left">Project Name : Woodgrains</p><br>
+							                    <p class="pull-left">Price : Rs.111000/-</p>
+							                </div>
+					            		</div>
+					            		
+								</div>
+								<div class="col-md-4 card_container">
+										
+										<div class="card" ng-click = "visible('description')">
+							                <div class="card-image">
+							                    <img class="img-responsive" src="images/ImageRender9.jpg">
+							                    <!-- <span class="card-title">Material Cards</span> -->
+							                </div>
+							                
+							                <div class="card-content pull-left">
+							                    <p class = "pull-left">
+							                    	Project Name : L-Shaped Kitchen
+							                    </p><br>
+							                    <p class="pull-left">Price : Rs.111000/-</p>
+							                </div>
+					            		</div>
+					            		
+								</div>
+								<div class="col-md-4 card_container">
+										
+										<div class="card" ng-click = "visible('description')">
+						                <div class="card-image">
+						                    <img class="img-responsive" src="images/ImageRender30.jpg">
+						                    <!-- <span class="card-title">Material Cards</span> -->
+						                </div>
+						                
+						                <div class="card-content pull-left">
+						                    <p class="pull-left">
+						                    	Project Name : Straight Kitchen
+						                    </p>
+						                    <br>
+							                <p class="pull-left">Price : Rs.111000/-</p>
+						                </div>
+					            		</div>
+					            		
+								</div>
+							</div>
+							<div class="row"> 
+								<div class="col-md-4 card_container">
+										
+										<div class="card" ng-click = "visible('description')">
+							                <div class="card-image">
+							                    <img class="img-responsive" src="images/ImageRender1.jpg">
+							                    <!-- <span class="card-title">Material Cards</span> -->
+							                </div>
+							                
+							                <div class="card-content">
+							                    <p>
+							                    	Project Name : Woodgrains <br>
+							                    	Price : Rs.111000/-
+							                    </p>
+							                </div>
+					            		</div>
+					            		
+								</div>
+								<div class="col-md-4 card_container">
+										
+										<div class="card" ng-click = "visible('description')">
+							                <div class="card-image">
+							                    <img class="img-responsive" src="images/ImageRender9.jpg">
+							                    <!-- <span class="card-title">Material Cards</span> -->
+							                </div>
+							                
+							                <div class="card-content">
+							                    <p>
+							                    	Project Name : L-Shaped Kitchen <br>
+							                    	Price : Rs.111000/-
+							                    </p>
+							                </div>
+					            		</div>
+					            		
+								</div>
+								<div class="col-md-4 card_container">
+										
+										<div class="card" ng-click = "visible('description')">
+						                <div class="card-image">
+						                    <img class="img-responsive" src="images/ImageRender30.jpg">
+						                    <!-- <span class="card-title">Material Cards</span> -->
+						                </div>
+						                
+						                <div class="card-content">
+						                    <p>
+						                    	Project Name : Straight Kitchen <br>
+						                    	Price : Rs.111000/-
+						                    </p>
+						                </div>
+					            		</div>
+					            		
+								</div>
+							</div>
+						</div>
+                    </div>
+
+                    <div class="tab-pane" id="best_seller">
+                    </div>
+
+                    <div class="tab-pane" id="most_viewed">
+                    </div>
+
+                    <div class="tab-pane" id="wishlist">
+                    </div>
+                </div>
+            </div>               
+		</div>
+		
+		<center>
+		<div class = "row" id = "load" style="display : none;">
+			<i class="fa fa-2x fa-spinner fa-spin" aria-hidden="true"></i>&nbsp;&nbsp;Loading More Products<br>
+		</div>
+		</center>
+	</div>
+
+
+	<div class="" role="main" id = "canvas_holder" ng-show="false">
+        <div id="canvas"></div>
+        <div class="">
+        </div>
+    </div>
+
+	<div class="modal" id="start_options">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					Welcome, Aniruddh
+					<span class="pull-right" style = "background:transparent;cursor:pointer;" ng-click="logout_func()">Log Out</span>
+				</div>
+
+				<div class="modal-body">
+					<span style="color: #92918D; padding: 5px 0; ">Select where to go,</span>
+					<center>
+						<div class="row">
+							<div class="col-sm-1">
+							</div>
+							<div class="col-sm-4">
+								<img id="start1" src="images/Assets-03.svg" ng-click = "visible('builder')">
+								<span class="img_caption" id="start_caption1">Builder's Project</span>
+							</div>
+							<div class="col-sm-2">
+							</div>
+							<div class="col-sm-4">
+								<img id="start2" src="images/Assets-02.svg" ng-click = "visible('floorplan')">
+								<span class="img_caption" id="start_caption2">Create Custom Project</span>
+							</div>
+							<div class="col-sm-1">
+							</div>
+						</div>
+					</center>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" id="login_modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button class="close" data-dismiss="modal">&times;</button>
+
+					<div class="tabbable">
+						<ul class="nav nav-tabs" id="login_tabs" style= "font-size: 24;">
+							<li class="active"><a href="#login" data-toggle="tab" id = "login_tab">Login</a></li>
+							<li><a href="#signup" data-toggle="tab" id="signup_tab">Sign up</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="modal-body">
+					<div class="col-xs-2"></div>
+					
+					<div class="col-xs-8">
+						<div class="tab-content">
+							<div class="tab-pane active" id="login">		
+								<div class="form-group has-success label-floating">
+								    <label for="email1" class="control-label">Email address</label>
+								    <input class="form-control" id="email1" type="email">
+								    <span class="help-block">Please enter a valid email address</span>
+								</div>
+								
+
+								<div class="form-group has-success label-floating">
+								    <label for="password" class="control-label">Password</label>
+								    <input class="form-control" id="password1" type="password">
+								    <span class="help-block">Please enter a password</span>
+								    <span class="pull-right supporting_text"><a>Forgot Password?</a></span>
+								</div>
+								
+								<div class="clearfix"><br><br></div>
+								<center><button id="login_btn" class="btn btn-raised" style = "background-color:#1ABB9C; color:#fff" ng-click = "login_func()">Login</button></center>
+							</div>
+
+							<div class="tab-pane" id="signup">
+								<div class="form-group has-success label-floating">
+								    <label for="name" class="control-label">Name</label>
+								    <input class="form-control" id="name" type="text">
+								    
+								</div>
+								
+
+								<div class="form-group has-success label-floating">
+								    <label for="email2" class="control-label">Email</label>
+								    <input class="form-control" id="email2" type="email">
+								    <span class="help-block">Please enter a valid email address</span>
+								</div>
+
+								<div class="form-group has-success label-floating">
+								    <label for="f5" class="control-label">Password</label>
+								    <input class="form-control" id="password2" type="password">
+								    <span class="help-block">Please enter a password</span>
+								</div>
+
+								<div class="form-group has-success label-floating">
+								    <label for="password3" class="control-label">Confirm Password</label>
+								    <input class="form-control" id="password3" type="password">
+								    <span class="help-block">Retype Password</span>
+								</div>
+								<br>
+								<center><button id="signup_btn" class="btn btn-raised" style = "background-color:#1ABB9C; color:#fff" ng-click = "signup_func()">Create Your Account</button></center>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-2"></div>		
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<div id="scroll"><center><i class="fa fa-angle-up"></i></center></div>
+
+
+	<footer id="main_footer">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-4">
+					<img src="images/logo.png" style= "width: 100%; padding:30px;">
+				</div>
+
+				<div class="col-sm-4">
+					<h3>ABOUT US</h3>
+					<p>We work with leading furniture companies on cutting edge technological aspect. We have in-house developed products that can boost sales, cut cost and add a wow factor to seller's offering. We are committed to bring about a technological revolution to furniture industry.
+					<br><br>
+					Read More
+					</p>
+				</div>
+
+				<div class="col-sm-4">
+					<h3>CONTACT US</h3>
+					<p>#32, 3rd Floor,
+					<br> 
+					7th Cross,17th Main,
+					<br> 
+					Koramangala 6th Block, 
+					<br>
+					Bengaluru - 560095
+					<br><br>
+					info@infurnia.com
+					<br><br>
+					080 4121 9904
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<footer id="dummy_footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9">
+					<p>&copy 2016 All Rights Reserved | Infurnia Furnishings Pvt Ltd</p>
+				</div>
+
+				<div class="col-sm-3">
+					<ul class="social pull-right">
+						<li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+</body>
+
+
+<script src="js/sketch1.js"></script>
+<script src="js/dw.js"></script>
+<script src="js/floorplanfunctioning.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="dist/js/material.js"></script>
+<!-- <script src="dist/js/ripples.js"></script> -->
+<script src="js/main.js"></script>
+<script src="js/infinite_scroll.js"></script>
+<script src="js/bootstrap-switch.min.js"></script>
+<script type="text/javascript">
+	$.material.init()
+</script>
+
+<script>
+
+	$(document).ready(function(){
+		$('.combobox').combobox();
+	})
+
+    function change_metric_system(){
+        if(metric_system == 'mm') {
+            metric_system = 'ft';
+            $("#metricSystem")[0].innerHTML='<a class="tooltip" onclick = "change_metric_system()"><span style="font-weight: bold;font-size: 22px;"><center>m</center></span><span class="tooltiptext">Toggle Dimension Unit</span></a>';
+              
+        }
+        else if(metric_system == 'ft'){
+            metric_system = 'mm';                
+            $("#metricSystem")[0].innerHTML='<a class="tooltip" onclick = "change_metric_system()"><span style="font-weight: bold;font-size: 22px;"><center>ft</center></span><span class="tooltiptext">Toggle Dimension Unit</span></a>';
+            
+        }   
+    }
+
+    function close_panel(){
+        // $('.panel_content').hide();
+        // $("#info").animate({ width: 'hide' });
+        // $('#sidebar-menu li').removeClass('active').removeClass('active-sm');
+        elem_panel = "";
+
+        $('.panel_content').show();
+
+        $("#panel_fixed_header li").each(function(){
+            $(this).removeClass("active_panel_header_li");
+        })
+        $(".Project").addClass("active_panel_header_li");                                       
+       
+
+        $("#info").animate({ width: 'show' });
+        $("#Project").slideDown();
+        $("#Room").hide();
+        $("#Window").hide();
+        $("#Door").hide();
+        $("#modifyCompartment").hide();
+        $("#rightClickMenu").hide();
+
+
+        
+    }
+</script>
+
+</html>

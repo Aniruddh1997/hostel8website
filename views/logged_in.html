@@ -1,0 +1,145 @@
+<div class="container-fluid" style="padding : 0px 45px;">
+	<div class="row"><br/></div>
+
+	<div id="logged_in_tabs">
+		<div class="tabbable"> <!-- Only required for left/right tabs -->
+           	<ul class="nav nav-tabs" style = "display : none;">
+            	<li class="active"><a data-target = "#design_themes" data-toggle="tab">FEATURED DESIGNS</a></li>
+            	<li><a data-target="#best_seller" data-toggle="tab">BEST SELLER</a></li>
+            	<li><a data-target="#most_viewed" data-toggle="tab">MOST VIEWED</a></li>
+            	<li><a data-target="#wishlist" data-toggle="tab">MY WISHLIST</a></li>
+                
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="design_themes">
+                    <div class="container-fluid">
+						<div class="col-sm-6 col-md-4 card_container">
+								
+								<div class="card" ng-click = "visible('description')">
+
+					                <div class="card-image">
+					                	<div class="add_wishlist" ng-click="addToWishlist($event)"><i class="fa fa-heart-o"></i></div>
+					                    <img class="img-responsive" src="images/ImageRender1.jpg">
+					                    <!-- <span class="card-title">Material Cards</span> -->
+
+					                </div>						                
+
+					                <div class="card-content pull-left">
+					                    <p class="pull-left">Woodgrains</p>
+					                    <!-- <p class="pull-left">Price : Rs.111000/-</p> -->
+					                </div>
+			            		</div>
+			            		
+						</div>
+						<div class="col-sm-6 col-md-4 card_container">
+								
+								<div class="card" ng-click = "visible('description')">
+					                <div class="card-image">
+					                	<div class="add_wishlist" ng-click="addToWishlist($event)"><i class="fa fa-heart-o"></i></div>
+					                    <img class="img-responsive" src="images/ImageRender9.jpg">
+					                    <!-- <span class="card-title">Material Cards</span> -->
+					                </div>
+					                
+					                <div class="card-content pull-left">
+					                    <p class = "pull-left">
+					                    	L-Shaped Kitchen
+					                    </p>
+					                    <!-- <p class="pull-left">Price : Rs.111000/-</p> -->
+					                </div>
+			            		</div>
+			            		
+						</div>
+						<div class="col-sm-6 col-md-4 card_container">
+								
+								<div class="card" ng-click = "visible('description')">
+				                <div class="card-image">
+				                	<div class="add_wishlist" ng-click="addToWishlist($event)"><i class="fa  fa-heart-o"></i></div>
+				                    <img class="img-responsive" src="images/ImageRender30.jpg">
+				                    <!-- <span class="card-title">Material Cards</span> -->
+				                </div>
+				                
+				                <div class="card-content pull-left">
+				                    <p class="pull-left">
+				                    	Straight Kitchen
+				                    </p>
+				                    
+					                <!-- <p class="pull-left">Price : Rs.111000/-</p> -->
+				                </div>
+			            		</div>
+			            		
+						</div>
+					
+						<div class="col-sm-6 col-md-4 card_container">
+								
+								<div class="card" ng-click = "visible('description')">
+					                <div class="card-image">
+					                	<div class="add_wishlist" ng-click="addToWishlist($event)"><i class="fa  fa-heart-o"></i></div>
+					                    <img class="img-responsive" src="images/ImageRender1.jpg">
+					                    <!-- <span class="card-title">Material Cards</span> -->
+					                </div>
+					                
+					                <div class="card-content">
+					                    <p>
+					                    	Woodgrains
+					                    	<!-- Price : Rs.111000/- -->
+					                    </p>
+					                </div>
+			            		</div>
+			            		
+						</div>
+						<div class="col-sm-6 col-md-4 card_container">
+								
+								<div class="card" ng-click = "visible('description')">
+					                <div class="card-image">
+					                	<div class="add_wishlist" ng-click="addToWishlist($event)"><i class="fa  fa-heart-o"></i></div>
+					                    <img class="img-responsive" src="images/ImageRender9.jpg">
+					                    <!-- <span class="card-title">Material Cards</span> -->
+					                </div>
+					                
+					                <div class="card-content">
+					                    <p>
+					                    	L-Shaped Kitchen
+					                    	<!-- Price : Rs.111000/- -->
+					                    </p>
+					                </div>
+			            		</div>
+			            		
+						</div>
+						<div class="col-sm-6 col-md-4 card_container">
+								
+								<div class="card" ng-click = "visible('description')">
+				                <div class="card-image">
+				                	<div class="add_wishlist" ng-click="addToWishlist($event)"><i class="fa  fa-heart-o"></i></div>
+				                    <img class="img-responsive" src="images/ImageRender30.jpg">
+				                    <!-- <span class="card-title">Material Cards</span> -->
+				                </div>
+				                
+				                <div class="card-content">
+				                    <p>
+				                    	Straight Kitchen
+				                    	<!-- Price : Rs.111000/- -->
+				                    </p>
+				                </div>
+			            		</div>
+						</div>
+					</div>
+                </div>
+
+                <div class="tab-pane" id="best_seller">c
+                </div>
+
+                <div class="tab-pane" id="most_viewed">
+                </div>
+
+                <div class="tab-pane" id="wishlist">
+                </div>
+            </div>
+        </div>               
+	</div>
+	
+	<center>
+	<div class = "row" id = "load" style="display : none;">
+		<i class="fa fa-2x fa-spinner fa-spin" aria-hidden="true"></i>&nbsp;&nbsp;Loading More Products<br>
+	</div>
+	</center>
+</div>
