@@ -1568,10 +1568,10 @@ ul.breadcrumb {
     margin-top: 0;
 }
 
-.mess_header{
+/*.mess_header{
     background-color: #EDEDED;
     margin: 15px 50px;
-    /*padding :20px;*/
+    padding :20px;
     font-size: 16px;
     height: 55px;
 }
@@ -1594,4 +1594,22 @@ ul.breadcrumb {
 
 .mess_menu h3{
     margin: 0;
+}*/
+
+#accordion{
+    border-radius: 0;
+}
+
+#accordion .panel{
+    border-radius: 0;
+    box-shadow: none;
+}
+
+#accordion .panel-heading{
+    border-radius: 0;
+    border : 1px solid #AAA;
+}
+
+#accordion .panel-body{
+    border-radius: 0;
 }
