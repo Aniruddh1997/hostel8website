@@ -175,9 +175,6 @@ $(document).ready(function(){
 		$("#login_modal").modal("show");
 	})
 
-	$(".card").click(function(){
-		window.location = "description.html";
-	})
 
 	$(".navbar-collapse").on("hide.bs.collapse",function(){
      	$(this).animate({
@@ -233,5 +230,15 @@ $(document).ready(function(){
     	$("#dropMenu").slideToggle();
     } 
 
+    open_council = function(id){
+    	$("#gsec")[0].style.display = "none";
+    	$("#sport")[0].style.display = "none";
+    	$("#cult")[0].style.display = "none";
+    	$("#tech")[0].style.display = "none";
+    	$("#comp")[0].style.display = "none";
+    	$("#maint")[0].style.display = "none";
+    	$("#mess")[0].style.display = "none";
 
+    	$("#"+id).slideDown();
+    }
 })
