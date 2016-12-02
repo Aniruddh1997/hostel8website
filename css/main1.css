@@ -1603,6 +1603,7 @@ ul.breadcrumb {
 #accordion .panel{
     border-radius: 0;
     box-shadow: none;
+    cursor: pointer;
 }
 
 #accordion .panel-heading{
@@ -1612,4 +1613,10 @@ ul.breadcrumb {
 
 #accordion .panel-body{
     border-radius: 0;
+}
+
+.gallery_nav li{
+    height: 50px;
+    font-size: 16px;
+    padding: 10px;
 }
