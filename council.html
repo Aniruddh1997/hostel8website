@@ -16,11 +16,14 @@
 	<link href="css/bootstrap-switch.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/colorpicker/bootstrap-colorpicker.min.css">
 	<link rel="stylesheet" href="css/snackbar.min.css">
-
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/style3.css" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css' />
+	
 	<link rel="stylesheet" href="css/main1.css">
 	<link rel="stylesheet" href="css/card.css">	
 	
-
 	<script src="js/jquery.min.js"></script>
 	<script src="js/angular.js"></script>
 	<script src="js/angular-route.js"></script>
@@ -137,7 +140,7 @@
 
 	<div class="container-fluid">
 		<div id="co_page">
-			<div class="card" onclick="open_council('gsec')">
+			<div class="card active" onclick="open_council('gsec')" id="co_gsec">
 				<img class="card-img-top" src="images/ImageRender1.jpg" alt="Card image cap">
 				<div class="card-block">
 					<h4 class="card-title">Card title</h4>
@@ -146,7 +149,7 @@
 				</div>
 			</div>
 
-			<div class="card" onclick="open_council('sport')">
+			<div class="card" onclick="open_council('sport')" id="co_sport">
 				<img class="card-img-top" src="images/ImageRender9.jpg" alt="Card image cap">
 				<div class="card-block">
 					<h4 class="card-title">Card title</h4>
@@ -155,7 +158,7 @@
 				</div>
 			</div>
 
-			<div class="card" onclick="open_council('cult')">
+			<div class="card" onclick="open_council('cult')" id="co_cult">
 				<img class="card-img-top" src="images/ImageRender9.jpg" alt="Card image cap">
 				<div class="card-block">
 					<h4 class="card-title">Card title</h4>
@@ -164,7 +167,7 @@
 				</div>
 			</div>
 
-			<div class="card" onclick="open_council('tech')">
+			<div class="card" onclick="open_council('tech')" id="co_tech">
 				<img class="card-img-top" src="images/ImageRender9.jpg" alt="Card image cap">
 				<div class="card-block">
 					<h4 class="card-title">Card title</h4>
@@ -173,7 +176,7 @@
 				</div>
 			</div>
 
-			<div class="card" onclick="open_council('comp')">
+			<div class="card" onclick="open_council('comp')" id="co_comp">
 				<img class="card-img-top" src="images/ImageRender9.jpg" alt="Card image cap">
 				<div class="card-block">
 					<h4 class="card-title">Card title</h4>
@@ -182,7 +185,7 @@
 				</div>
 			</div>
 
-			<div class="card" onclick="open_council('maint')">
+			<div class="card" onclick="open_council('maint')" id="co_maint">
 				<img class="card-img-top" src="images/ImageRender9.jpg" alt="Card image cap">
 				<div class="card-block">
 					<h4 class="card-title">Card title</h4>
@@ -191,7 +194,7 @@
 				</div>
 			</div>
 
-			<div class="card" onclick="open_council('mess')">
+			<div class="card" onclick="open_council('mess')" id="co_mess">
 				<img class="card-img-top" src="images/ImageRender9.jpg" alt="Card image cap">
 				<div class="card-block">
 					<h4 class="card-title">Card title</h4>
@@ -282,6 +285,35 @@
 				</div>
 			</div>
 			<div id="cult">
+				<ul class="ch-grid">
+					<li>
+						<div class="ch-item">	
+							<div class="ch-info">
+								<h3>Ward Nominee</h3>
+								<p>Mayank Prakash <a href="http://drbl.in/eGjw">Manifesto</a></p>
+							</div>
+							<div class="ch-thumb"><img class="img-responsive" src="images/mayank.jpg"></div>
+						</div>
+					</li>
+					<li>
+						<div class="ch-item">
+							<div class="ch-info">
+								<h3>Comp Secy</h3>
+								<p>Praveen Kanwat <a href="http://drbl.in/eFWR">Manifesto</a></p>
+							</div>
+							<div class="ch-thumb"><img class="img-responsive" src="images/praveen.jpg"></div>
+						</div>
+					</li>
+					<li>
+						<div class="ch-item">
+							<div class="ch-info">
+								<h3>SOC Secy</h3>
+								<p>Abhishek Kanthed <a href="http://drbl.in/eFED">Manifesto</a></p>
+							</div>
+							<div class="ch-thumb"><img class="img-responsive" src="images/abhishek.jpg"></div>
+						</div>
+					</li>
+				</ul>
 			</div>
 			<div id="tech">
 			</div>
@@ -471,6 +503,7 @@
 
 </body>
 
+<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
 <script src="js/velocity.min.js"></script>
 <script src="js/velocity.ui.min.js"></script>
 <script src="js/bootstrap.js"></script>

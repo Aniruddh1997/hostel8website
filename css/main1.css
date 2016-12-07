@@ -1622,12 +1622,13 @@ ul.breadcrumb {
 }
 
 #co_page >.card{
-    width: 13%;
+    width: 14%;
+    opacity: 0.5;
 }
 
-/*.card.active{
+#co_page .card.active{
     opacity: 1;
-}*/
+}
 
 .card-img-top{
     width: 100%;

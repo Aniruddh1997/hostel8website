@@ -45,9 +45,9 @@ $(document).ready(function(){
 
 		$(".navbar-collapse")[0].style.width = "auto";
 
-		$(".img-responsive").each(function(){
-			$(this).height($(this).width()*9/16);
-		})
+		// $(".img-responsive").each(function(){
+		// 	$(this).height($(this).width()*9/16);
+		// })
 	})
 	
 	//the dummy header has position relative.so it doesn't appear on scrolling
@@ -231,14 +231,11 @@ $(document).ready(function(){
     } 
 
     open_council = function(id){
-    	$("#gsec")[0].style.display = "none";
-    	$("#sport")[0].style.display = "none";
-    	$("#cult")[0].style.display = "none";
-    	$("#tech")[0].style.display = "none";
-    	$("#comp")[0].style.display = "none";
-    	$("#maint")[0].style.display = "none";
-    	$("#mess")[0].style.display = "none";
+    	$("#council_info>div").css("display", "none");
+
+    	$("#co_page .card").removeClass("active");
 
     	$("#"+id).slideDown();
+    	$("#co_"+id).addClass("active");
     }
 })
