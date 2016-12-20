@@ -116,50 +116,6 @@ $(document).ready(function(){
 		return false; 
 	});
 
-	$("#start1").hover(
-		function(){
-			$("#start1").attr("src","images/Assets-01.svg");
-			$("#start_caption1")[0].style.color = "#33AD93";
-		},function(){
-			$("#start1").attr("src","images/Assets-03.svg");
-			$("#start_caption1")[0].style.color = "#000";
-		}
-	);
-
-	$("#start2").hover(
-		function(){
-			$("#start2").attr("src","images/Assets-04.svg");
-			$("#start_caption2")[0].style.color = "#33AD93";
-		},function(){
-			$("#start2").attr("src","images/Assets-02.svg");
-			$("#start_caption2")[0].style.color = "#000";
-		}
-	);
-
-	// $(document).click(function(event){
-	// 	var a = true;
-	// 	var b = true;
-	// 	$(".dropdown_menu li").each(function(){
-	// 		if(event.target == this){
-	// 			a =false;
-	// 		}
-	// 	})
-
-	// 	if(a){
-	// 		$(".dropdown_menu").find(".active_li").siblings().slideUp();
-	// 	}
-
-	// 	$("#account1 *").each(function(){
-	// 		if(event.target == this){
-	// 			b =false;
-	// 		}
-	// 	})
-
-		// if(b){
-		// 	$("#account_dropdown").slideUp();
-		// }
-	// })
-
 	account1_click = function(){
 		$("#account_dropdown").slideToggle();
 		
@@ -222,10 +178,6 @@ $(document).ready(function(){
     	$("#edit_address").slideToggle();
     }
 
-    change_texture = function(index){
-    	texture = texture_img[index];
-    }
-
     menu_drop = function(){
     	$("#dropMenu").slideToggle();
     } 
@@ -238,4 +190,26 @@ $(document).ready(function(){
     	$("#"+id).slideDown();
     	$("#co_"+id).addClass("active");
     }
+
+    carousel_click = function(id){
+    	$(".carousel-indicators li:nth-child("+id+")").click();
+    	$(".gallery_nav li").removeClass("active");
+    	$(".gallery_nav li").removeClass("arrow_box");
+    	$(".gallery_nav li").css({"background-color": "#fff", "color": "#000"});
+    	$(".gallery_nav li:nth-child("+id+")").addClass("active");
+    	$(".gallery_nav li:nth-child("+id+")").addClass("arrow_box");
+    	$(".gallery_nav li:nth-child("+id+")").css({"background-color": "#000", "color": "#fff"});
+    }
+
+    $(".gallery_nav li").hover(
+    	function(){
+    		if(!$(this).hasClass("active")){
+    			$(this).css("background-color", "#ccc");
+    		}
+    	},function(){
+    		if(!$(this).hasClass("active")){
+    			$(this).css("background-color", "#fff");
+    		}
+    	}
+    ) 
 })
