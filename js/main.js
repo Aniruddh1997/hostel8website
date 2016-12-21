@@ -198,13 +198,13 @@ $(document).ready(function(){
     	$(".gallery_nav li").css({"background-color": "#fff", "color": "#000"});
     	$(".gallery_nav li:nth-child("+id+")").addClass("active");
     	$(".gallery_nav li:nth-child("+id+")").addClass("arrow_box");
-    	$(".gallery_nav li:nth-child("+id+")").css({"background-color": "#000", "color": "#fff"});
+    	$(".gallery_nav li:nth-child("+id+")").css({"background-color": "#1a1c27", "color": "#fff"});
     }
 
     $(".gallery_nav li").hover(
     	function(){
     		if(!$(this).hasClass("active")){
-    			$(this).css("background-color", "#ccc");
+    			$(this).css("background-color", "rgba(26,187,156,0.5");
     		}
     	},function(){
     		if(!$(this).hasClass("active")){
@@ -212,4 +212,18 @@ $(document).ready(function(){
     		}
     	}
     ) 
+
+    show_gallery = function(id){
+    	var x = 0;
+    	$(".gallery.active img").fadeOut(function(){
+    		x++;
+    		if(x==1){
+    			$("#" + id + " img").velocity("transition.swoopIn");
+    		}
+    	});
+    	
+    	$(".gallery").removeClass("active");
+    	$("#" + id).addClass("active");
+
+    }
 })

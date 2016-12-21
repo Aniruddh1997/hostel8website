@@ -1645,7 +1645,7 @@ ul.breadcrumb {
 
 .arrow_box {
     position: relative;
-    background: #000;
+    background: #1a1c27;
     /*border: 4px solid #c2e1f5;*/
 }
 .arrow_box:after, .arrow_box:before {
@@ -1661,7 +1661,7 @@ ul.breadcrumb {
 
 .arrow_box:after {
     border-color: rgba(136, 183, 213, 0);
-    border-left-color: #000;
+    border-left-color: #1a1c27;
     border-width: 30px;
     margin-top: -30px;
 }
@@ -1675,4 +1675,20 @@ ul.breadcrumb {
 #accordion{
     padding-left: 50px;
     padding-right: 50px;
+}
+
+.gallery img{
+    margin: 15px 0px;
+}
+
+#sport img{
+    display: none;
+}
+
+#cult img{
+    display: none;
+}
+
+#tech img{
+    display: none;
 }
