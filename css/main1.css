@@ -1755,7 +1755,7 @@ ul.breadcrumb {
     margin: 0 auto;
 }
 
-#co_page img{
+#co_page>div{
     height: 200px;
     width: 200px;
     border-radius: 200px;
@@ -1767,12 +1767,54 @@ ul.breadcrumb {
     width: 200px;
     height:200px;
     border-radius: 200px;
-    opacity: 0.7;
+    opacity: 0.5;
     top: 0px;
     display: none;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
 }
 
 #co_page a:focus{
     text-decoration: none;
     border: 0px;
+}
+
+#co_page>div{
+    cursor: pointer;
+}
+
+#co_gsec{
+    background-image:url('../images/mayank.jpg');
+    background-size: 200px 200px;
+}
+
+#co_sport{
+    background-image:url('../images/sport1.jpg');
+    background-size: 200px 200px;
+}
+
+#co_tech{
+    background-image:url('../images/sport3.jpg');
+    background-size: 200px 200px;
+}
+
+#co_maint{
+    background-image:url('../images/sport4.jpg');
+    background-size: 200px 200px;
+}
+
+#co_mess{
+    background-image:url('../images/sport5.jpg');
+    background-size: 200px 200px;
+}
+
+#co_cult{
+    background-image:url('../images/sport6.jpg');
+    background-size: 200px 200px;
+}
+
+#co_comp{
+    background-image:url('../images/sport7.jpg');
+    background-size: 200px 200px;
 }

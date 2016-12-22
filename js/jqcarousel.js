@@ -29,7 +29,7 @@
     options: {
       eccentricity: .97,
       focus: 450,
-      animationDuration: 600,
+      animationDuration: 400,
       opacity: true,
       resize: true,
       angle: 0,

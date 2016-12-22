@@ -185,7 +185,7 @@ $(document).ready(function(){
     open_council = function(id){
     	$("#council_info>div").css("display", "none");
 
-    	$("#co_page .card").removeClass("active");
+    	$("#co_page img").removeClass("active");
 
     	$("#"+id).slideDown();
     	$("#co_"+id).addClass("active");
@@ -237,14 +237,14 @@ $(document).ready(function(){
     )
 
     $('#co_page').jqcarousel();
-    $('#co_page').css("height", "80vh");
+    $('#co_page').css("height", "500px");
 
-    $("#co_page img").mouseenter(function(){
-	    	$(this).siblings(".full_overlay").fadeIn();
+    $("#co_page>div").mouseenter(function(){
+	    	$(this).children().velocity('transition.shrinkIn');
     });
     
-    $("#co_page img").mouseleave(function(){
-    		$(this).siblings(".full_overlay").fadeOut();
+    $("#co_page>div").mouseleave(function(){
+    		$(this).children().fadeOut();
     });
     
 
