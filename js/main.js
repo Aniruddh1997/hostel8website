@@ -1,24 +1,24 @@
 $(document).ready(function(){
 
-	if(sessionStorage.length == 0){
-		if(typeof(Storage) !== "undefined"){
-	        sessionStorage.setItem("user_login","false");
+	// if(sessionStorage.length == 0){
+	// 	if(typeof(Storage) !== "undefined"){
+	//         sessionStorage.setItem("user_login","false");
 	  
-	    } else {
-	        alert("SessionStorage Not Supported");
-	    }
-	}
+	//     } else {
+	//         alert("SessionStorage Not Supported");
+	//     }
+	// }
 
-	var user_login = sessionStorage.getItem("user_login");
-	if(user_login == "true"){
-		var tmpStr = '	<button class="btn btn-raised btn-default" id = "user_info" style = "cursor:pointer;margin-top: 25px;" onclick="account1_click()">\n\
-							<i class="fa fa-lg fa-user"></i>Aniruddh<i class="fa fa-lg fa-angle-down" style="color:#000;"></i>\n\
-						</button>'
-		$("#user_info").replaceWith(tmpStr);
-		$("#dropdown3")[0].style.display = "block";
-		// $("#dropMenu")[0].style.display = "block";
-		$("#dropdown4")[0].style.display = "none";
-	}
+	// var user_login = sessionStorage.getItem("user_login");
+	// if(user_login == "true"){
+	// 	var tmpStr = '	<button class="btn btn-raised btn-default" id = "user_info" style = "cursor:pointer;margin-top: 25px;" onclick="account1_click()">\n\
+	// 						<i class="fa fa-lg fa-user"></i>Aniruddh<i class="fa fa-lg fa-angle-down" style="color:#000;"></i>\n\
+	// 					</button>'
+	// 	$("#user_info").replaceWith(tmpStr);
+	// 	$("#dropdown3")[0].style.display = "block";
+	// 	// $("#dropMenu")[0].style.display = "block";
+	// 	$("#dropdown4")[0].style.display = "none";
+	// }
 
 	//so that the fixed header appears at the right spot while initially loading the website
 	if($("#dummy_header").is(":visible")){
@@ -195,10 +195,10 @@ $(document).ready(function(){
     	$(".carousel-indicators li:nth-child("+id+")").click();
     	$(".gallery_nav li").removeClass("active");
     	$(".gallery_nav li").removeClass("arrow_box");
-    	$(".gallery_nav li").css({"background-color": "#fff", "color": "#000"});
+    	$(".gallery_nav li").css({"background-color": "#a5e58e", "color": "#000"});
     	$(".gallery_nav li:nth-child("+id+")").addClass("active");
     	$(".gallery_nav li:nth-child("+id+")").addClass("arrow_box");
-    	$(".gallery_nav li:nth-child("+id+")").css({"background-color": "#1a1c27", "color": "#fff"});
+    	$(".gallery_nav li:nth-child("+id+")").css({"background-color": "#222533", "color": "#fff"});
     }
 
     $(".gallery_nav li").hover(
@@ -208,7 +208,7 @@ $(document).ready(function(){
     		}
     	},function(){
     		if(!$(this).hasClass("active")){
-    			$(this).css("background-color", "#fff");
+    			$(this).css("background-color", "#a5e58e");
     		}
     	}
     ) 
@@ -235,4 +235,8 @@ $(document).ready(function(){
     		$(this).children(".overlay").animate({height:"0px"},100);
     	}
     )
+
+    $('#co_page').jqcarousel();
+    $('#co_page').css("height", "60vh");
+
 })

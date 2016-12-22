@@ -23,6 +23,7 @@
 	
 
 	<script src="js/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 	<script src="js/angular.js"></script>
 	<script src="js/angular-route.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
@@ -109,7 +110,7 @@
 			<div class="container-fluid">
 				<div class="col-sm-3" style="padding-left: 55px;">
 					<div class="navbar-header">
-						<img src="images/logo.jpg" ng-click="visible('logged_in')" style="cursor: pointer;">
+						<a href="hello.html"><img src="images/logo1.jpg" style="cursor: pointer;"></a>
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target = ".navbar-collapse" style="margin-top: 8px;margin-right: 0px;">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -223,50 +224,12 @@
 	</div>
 	<div id="scroll"><center><i class="fa fa-angle-up"></i></center></div>
 
-
-	<footer id="main_footer">
-		<div class="container-fluid">
-			<div class="col-sm-4">
-				<br><br>
-				<img id = "footer_img" class = "img-responsive" src="images/logo.png" style="width: 270px;">
-				<br><br>
-			</div>
-
-			<div class="col-sm-4" style="padding-left: 30px;">
-				<div>
-					<h4 style = "font-weight : 900;; margin-bottom : 38px;">ABOUT US</h4>
-					<p style = "font-size: 14px; color: #a1b1bc; margin-bottom: 17px;">We work with leading furniture companies on cutting edge technological aspect. We have in-house developed products that can boost sales, cut cost and add a wow factor to seller's offering. We are committed to bring about a technological revolution to furniture industry.
-					</p>
-					<p style="color : #1ABB9C">Read More</p>
-				</div>
-			</div>
-
-			<div class="col-sm-4" style="padding-left: 30px;">
-				<div id="know_us">
-					<h4 style = "font-weight : 900; margin-bottom : 38px;">GET TO KNOW US</h4>
-					<p><a href = "http://www.infurnia.com/"> Home</a></p>
-					<p><a href="http://www.infurnia.com/blog/"> Blog </a></p>
-					<p><a href="http://www.infurnia.com/careers/"> Careers </a></p>
-					<p><a href="http://www.infurnia.com/about/"> About Us </a></p>
-				</div>
-			</div>
-		</div>
-	</footer>
-
 	<footer id="dummy_footer">
 		<div class="container-fluid">
 			<div class="col-sm-6" style="padding-top: 15px;padding-bottom: 10px;padding-left: 45px;">
 				&copy; 2016 All Rights Reserved | Infurnia Furnishings Pvt Ltd
 			</div>
-<!-- 
-			<div class="col-sm-3">
-				<ul class="social pull-right">
-					<li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				</ul>
-			</div>
--->
+
 			<div class="col-sm-6" style="padding-right: 45px;padding-top: 10px;">
 				
 				<ul class="social pull-right" id="footer_social">
@@ -297,6 +260,7 @@
 <script src="js/velocity.ui.min.js"></script>
 <script src="js/lightbox/lightbox.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="js/jqcarousel.js"></script>
 <script type="text/javascript">
 	$.material.init()
 </script>
