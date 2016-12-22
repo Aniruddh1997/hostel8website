@@ -1677,18 +1677,45 @@ ul.breadcrumb {
     padding-right: 50px;
 }
 
-.gallery img{
-    margin: 15px 0px;
-}
-
-#sport img{
+#sport_img img{
     display: none;
 }
 
-#cult img{
+#cult_img img{
     display: none;
 }
 
-#tech img{
+#tech_img img{
     display: none;
+}
+
+#main_header .nav_headers>a{
+    padding: 0px;
+    font-size: 18px;
+    color: #000;
+}
+
+#main_header .nav_headers>a:hover{
+    color: #1abb9c;
+}
+
+.img-responsive{
+    padding: 20px 0px;
+}
+
+.upcoming_events img{
+    padding: 35px 50px;
+}
+
+.overlay{
+    background-color: #1A1C27;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 5;
+    width: 71%;
+    height: 0px;
+    opacity: 0.9;
+    margin-bottom: 35px;
+    margin-left: 65px;
 }

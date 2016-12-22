@@ -61,7 +61,7 @@ $(document).ready(function(){
 				})
 
 				$("#main_header").animate({
-					height : "50px"
+					height : "45px"
 				},10)
 				$("#main_header img").animate({
 					width : "120px"
@@ -79,7 +79,7 @@ $(document).ready(function(){
 				})
 				
 				$("#main_header").animate({
-					height : "80px"
+					height : "70px"
 				},10)
 				$("#main_header img").animate({
 					width : "200px"
@@ -92,7 +92,7 @@ $(document).ready(function(){
 				$("#main_header")[0].style.top = "51px";
 
 				$("#main_header").animate({
-					height : "80px"
+					height : "70px"
 				},10)
 				$("#main_header img").animate({
 					width : "200px"
@@ -226,4 +226,13 @@ $(document).ready(function(){
     	$("#" + id).addClass("active");
 
     }
+
+    $(".upcoming_events .col-md-4").hover(
+    	function(){
+    		$(this).children(".overlay").animate({height:"50px"},100);
+    	},
+    	function(){
+    		$(this).children(".overlay").animate({height:"0px"},100);
+    	}
+    )
 })
