@@ -1757,8 +1757,8 @@ ul.breadcrumb {
 
 #co_page img{
     height: 200px;
+    width: 200px;
     border-radius: 200px;
-    position: relative;
 }
 
 .full_overlay{
@@ -1770,4 +1770,9 @@ ul.breadcrumb {
     opacity: 0.7;
     top: 0px;
     display: none;
+}
+
+#co_page a:focus{
+    text-decoration: none;
+    border: 0px;
 }
