@@ -27,14 +27,14 @@
   $.widget('ui.jqcarousel', {
 
     options: {
-      eccentricity: .98,
-      focus: 400,
+      eccentricity: .97,
+      focus: 450,
       animationDuration: 600,
       opacity: true,
       resize: true,
       angle: 0,
-      minOpacity: 0.2,
-      minSizeRatio: 0.8,
+      minOpacity: 0.1,
+      minSizeRatio: 1,
       keyboardNavigation: true,
       imageWidth: 200,
       direction: 'shortest',

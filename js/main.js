@@ -237,6 +237,15 @@ $(document).ready(function(){
     )
 
     $('#co_page').jqcarousel();
-    $('#co_page').css("height", "60vh");
+    $('#co_page').css("height", "80vh");
+
+    $("#co_page img").mouseenter(function(){
+	    	$(this).siblings(".full_overlay").fadeIn();
+    });
+    
+    $("#co_page img").mouseleave(function(){
+    		$(this).siblings(".full_overlay").fadeOut();
+    });
+    
 
 })
