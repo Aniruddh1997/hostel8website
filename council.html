@@ -20,6 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="css/common.css" />
     <link rel="stylesheet" type="text/css" href="css/style3.css" />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="css/lightbox.css">
 	
 	<link rel="stylesheet" href="css/main1.css">
 	<link rel="stylesheet" href="css/card.css">	
@@ -147,7 +148,9 @@
 				<div class="full_overlay">
 					<h3>Comp Secy</h3>
 					<p>Praveen Kanwat</p>
-					<a href="">Manifesto</a>
+					<div>7738693400&nbsp;&nbsp;  | &nbsp;&nbsp;   <i class = "fa fa-facebook"></i></div>
+					<p><a href="pdf/resume.pdf" target="_blank">Manifesto</a></p>
+					
 				</div>
 			</div>
 
@@ -178,16 +181,21 @@
 			<div width="100%" onclick="open_council('mess')" id="co_mess">
 				<div class="full_overlay"></div>
 			</div>
+
+			<div width="100%" onclick="open_council('mess')" id="co_mess">
+				<div class="full_overlay"></div>
+			</div>
 		</div>
 
 		<div id="council_info">
-			<div id="gsec">
+			<div id="gsec" style="display:block;">
+				<div class="heading">Hostel</div>
 				<ul class="ch-grid">
 					<li>
 						<div class="ch-item">	
 							<div class="ch-info">
 								<h3>Ward Nominee</h3>
-								<p>Anubhan Agarwal <a href="http://drbl.in/eGjw">Manifesto</a></p>
+								<p>Anubhav Agarwal <a href="http://drbl.in/eGjw">Manifesto</a></p>
 							</div>
 							<div class="ch-thumb"><img class="img-responsive" src="images/mayank.jpg"></div>
 						</div>
@@ -212,7 +220,8 @@
 					</li>
 				</ul>
 			</div>
-			<div id="sport">
+			<div id="cult">
+				<div class="heading">Cult Council</div>
 				<ul class="ch-grid">
 					<li>
 						<div class="ch-item">	
@@ -243,7 +252,8 @@
 					</li>
 				</ul>
 			</div>
-			<div id="cult">
+			<div id="sport">
+				<div class="heading">Sports Council</div>
 				<ul class="ch-grid">
 					<li>
 						<div class="ch-item">	
@@ -285,6 +295,7 @@
 				</ul>
 			</div>
 			<div id="tech">
+				<div class="heading">Tech Council</div>
 				<ul class="ch-grid">
 					<li>
 						<div class="ch-item">
@@ -298,6 +309,7 @@
 				</ul>
 			</div>
 			<div id="comp">
+				<div class="heading">Web Council</div>
 				<ul class="ch-grid">
 					<li>
 						<div class="ch-item">	
@@ -321,6 +333,7 @@
 				</ul>
 			</div>
 			<div id="maint">
+				<div class="heading">Maintenance Council</div>
 				<ul class="ch-grid">
 					<li>
 						<div class="ch-item">	
@@ -352,6 +365,7 @@
 				</ul>
 			</div>
 			<div id="mess">
+				<div class="heading">Mess Council</div>
 				<ul class="ch-grid">
 					<li>
 						<div class="ch-item">	
@@ -421,6 +435,7 @@
 <script src="js/bootstrap-switch.min.js"></script>
 <script src="js/bootstrap-colorpicker.min.js"></script>
 <script src="js/snackbar.min.js"></script>
+<script src="js/lightbox/lightbox.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="js/jqcarousel.js"></script>
 <script type="text/javascript">

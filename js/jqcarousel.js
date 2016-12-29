@@ -33,7 +33,7 @@
       opacity: true,
       resize: true,
       angle: 0,
-      minOpacity: 0.1,
+      minOpacity: 0.5,
       minSizeRatio: 1,
       keyboardNavigation: true,
       imageWidth: 200,
