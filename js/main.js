@@ -213,7 +213,7 @@ $(document).ready(function(){
     $(".gallery_nav li").hover(
     	function(){
     		if(!$(this).hasClass("active")){
-    			$(this).css("background-color", "#232323");
+    			$(this).css("background-color", "#333");
     		}
     	},function(){
     		if(!$(this).hasClass("active")){
@@ -222,7 +222,7 @@ $(document).ready(function(){
     	}
     ) 
 
-    show_gallery = function(id){
+    show_gallery = function(id,index){
     	var x = 0;
     	$(".gallery.active img").fadeOut(function(){
     		x++;
@@ -230,9 +230,19 @@ $(document).ready(function(){
     			$("#" + id + " img").velocity("transition.swoopIn");
     		}
     	});
+
+    	$("#" + id).velocity("transition.perspectiveDownIn");
     	
     	$(".gallery").removeClass("active");
     	$("#" + id).addClass("active");
+
+    	$(".gallery_nav li").removeClass("arrow_box");
+    	$(".gallery_nav li").removeClass("active");
+    	$(".gallery_nav li").css({"background-color": "#161616", "color": "#fff"});
+
+    	$(".gallery_nav li:nth-child("+index+")").addClass("arrow_box");
+    	$(".gallery_nav li:nth-child("+index+")").addClass("active");
+    	$(".gallery_nav li:nth-child("+index+")").css({"background-color": "#0185cf", "color": "#000"});
 
     }
 
@@ -248,6 +258,24 @@ $(document).ready(function(){
     // 		clearTimeout(myVar);
     // 	}
     // )
+
+	carousel_ctrl = function(dir){
+		var elem = $("#changing_nav li.active");
+		$("#changing_nav li").removeClass("active");
+		$("#changing_nav li").removeClass("arrow_box");
+		$("#changing_nav li").css({"background-color": "#161616", "color": "#fff"});
+
+		if(dir == "prev"){
+			elem.prev().addClass("active");
+			elem.prev().addClass("arrow_box");
+			elem.prev().css({"background-color": "#0185cf", "color": "#000"});
+		}
+		else{
+			elem.next().addClass("active");
+			elem.next().addClass("arrow_box");
+			elem.next().css({"background-color": "#0185cf", "color": "#000"});
+		}
+	}
 
     $('#co_page').jqcarousel();
     $('#co_page').css("height", "500px");
@@ -276,46 +304,49 @@ $(document).ready(function(){
 
 
 	$(function() {
-	    $(".upcoming_events .col-md-4>div").hover(function(e) {
+	    $("#upcoming .col-md-4>div").hover(function(e) {
 	    	var elem = $(this);
 	        var el_pos = $(this).offset();
 	        var edge = closestEdge(elem,e);
 
-	        $(this).find("span")[0].style.display = "block";
-	        if(edge == "left"){
-        		$(this).find(".overlay")[0].style.width = "0%";
-        		$(this).find(".overlay")[0].style.height = "100%";
-        		$(this).find(".overlay")[0].style.left = "0";
-        		$(this).find(".overlay")[0].style.right = "auto";
-        		$(this).find(".overlay").animate({width: "100%"},150);
-	        }
-	        else if(edge == "right"){
-        		$(this).find(".overlay")[0].style.width = "0%";
-        		$(this).find(".overlay")[0].style.height = "100%";
-        		$(this).find(".overlay")[0].style.right = "0";
-        		$(this).find(".overlay")[0].style.left = "auto";
-        		$(this).find(".overlay").animate({width: "100%"},150);
-        	}
-        	else if(edge == "top"){
-        		$(this).find(".overlay")[0].style.width = "100%";
-        		$(this).find(".overlay")[0].style.height = "0%";
-        		$(this).find(".overlay")[0].style.top = "0";
-        		$(this).find(".overlay")[0].style.bottom = "auto";
-        		$(this).find(".overlay").animate({height: "100%"},150);
-        	}
-        	else{
-        		$(this).find(".overlay")[0].style.width = "100%";
-        		$(this).find(".overlay")[0].style.height = "0%";
-        		$(this).find(".overlay")[0].style.bottom = "0";
-        		$(this).find(".overlay")[0].style.top = "auto";
-        		$(this).find(".overlay").animate({height: "100%"},150);
-	        }
+	        myVar1 = setTimeout(function(){
+	        	elem.find("span")[0].style.display = "block";
+		        if(edge == "left"){
+	        		elem.find(".overlay")[0].style.width = "0%";
+	        		elem.find(".overlay")[0].style.height = "100%";
+	        		elem.find(".overlay")[0].style.left = "0";
+	        		elem.find(".overlay")[0].style.right = "auto";
+	        		elem.find(".overlay").animate({width: "100%"},150);
+		        }
+		        else if(edge == "right"){
+	        		elem.find(".overlay")[0].style.width = "0%";
+	        		elem.find(".overlay")[0].style.height = "100%";
+	        		elem.find(".overlay")[0].style.right = "0";
+	        		elem.find(".overlay")[0].style.left = "auto";
+	        		elem.find(".overlay").animate({width: "100%"},150);
+	        	}
+	        	else if(edge == "top"){
+	        		elem.find(".overlay")[0].style.width = "100%";
+	        		elem.find(".overlay")[0].style.height = "0%";
+	        		elem.find(".overlay")[0].style.top = "0";
+	        		elem.find(".overlay")[0].style.bottom = "auto";
+	        		elem.find(".overlay").animate({height: "100%"},150);
+	        	}
+	        	else{
+	        		elem.find(".overlay")[0].style.width = "100%";
+	        		elem.find(".overlay")[0].style.height = "0%";
+	        		elem.find(".overlay")[0].style.bottom = "0";
+	        		elem.find(".overlay")[0].style.top = "auto";
+	        		elem.find(".overlay").animate({height: "100%"},150);
+		        }
+		    },50)
 	    }, function(e) {
 	    	var elem = $(this);
 	        var el_pos = $(this).offset();
 	        var edge = closestEdge(elem,e);
+	        clearTimeout(myVar1);
+	       	$(this).finish();
 
-	       
 	        if(edge == "left"){
         		$(this).find(".overlay")[0].style.left = "0";
         		$(this).find(".overlay")[0].style.right = "auto";
@@ -411,5 +442,24 @@ $(document).ready(function(){
             }
 
 	}
+
+	$("#services .col-md-4>div").hover(function(e) {
+	    	var elem = $(this);
+	      
+	        myVar2 = setTimeout(function(){
+	        	elem.find("span")[0].style.display = "block";
+	        	elem.find(".overlay")[0].style.width = "100%";
+		        elem.find(".overlay").animate({height: "50px"},150);
+		    },50)
+	    }, function(e) {
+	    	var elem = $(this);
+	        clearTimeout(myVar2);
+	       	$(this).finish();
+
+	       	$(this).find(".overlay").animate({height: "0%"},150,function(){
+    			elem.find("span")[0].style.display = "none";
+    		});
+
+	});
 
 })

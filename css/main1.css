@@ -5,11 +5,6 @@ body{
   font-size: 16px;
 }
 
-h1,h2,h3{
-  font-family: 'Lane', sans-serif;
-  font-weight: normal;
-}
-
 .whileLoading{
   z-index: 900;
   position: fixed;
@@ -1734,19 +1729,22 @@ ul.breadcrumb {
     z-index: 5;
     width: 0%;
     height: 0%;
+    opacity: 0.75;
     text-align: center;
-    font-size: 24px;
+    font-size: 36px;
     color: #fff;
 }
 
 .overlay span{
   display: none;
+  position: relative;
+  top: 40%;
 }
 
 
 .heading{
     text-align: center;
-    padding: 20px 0px;
+    padding: 20px 0px 0 0;
     color: #fff;
     font-family: 'Lane', sans-serif;
     font-size: 3.125rem;
@@ -1902,4 +1900,35 @@ ul.ch-grid{
   font-weight: 700;
 }
 
+td{
+  color: #fff;
+  border: 1px solid #fff;
+  width: 45%;
+  text-align: center;
+  height: 30px;
+}
+
+thead td{
+  font-weight: bold;
+  font-size: 24px;
+  /*background-color: #0185cf;*/
+}
+
+tr:nth-child(even) {
+  background-color: #232323;
+}
+
+.table_head{
+  background-color: #161616;
+}
+
+#services .overlay{
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+#services .overlay span{
+  top: 0;
+  line-height: 50px;
+}
 
