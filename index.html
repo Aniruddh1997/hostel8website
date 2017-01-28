@@ -580,7 +580,7 @@
 				<div>
 					<img class="img-responsive" src="images/sport1.jpg">
 					<div class="overlay">
-						<span>Mess Complaint</span>
+						<span><div id="sso-root"></div></span>
 					</div>
 				</div>
 			</div>
@@ -650,6 +650,34 @@
 <script src="js/lightbox/lightbox.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="js/jqcarousel.js"></script>
+<script src="https://gymkhana.iitb.ac.in/sso/static/widget/js/login.min.js" type="application/javascript"></script>
+<script type="application/javascript">
+
+    new SSO_JS({
+        config: {
+            client_id: 'your-long-client-id',   // Compulsory
+            scope: ['basic', 'profile'],    // Optional. Default is  ['basic']
+            state: '', // Optional. Default None
+            response_type: 'code',  // Optional. Default is 'code'
+            redirect_uri: 'uri-for-redirection',    //Optional
+            new_window: 'false',    // Optional.
+                                    // Where authorization page should be opened in new tab or
+                                    // same tab Default is false.
+            sso_root: document.getElementById('sso-root'),
+            /* Optional
+             document.getElementById don't work if your element is not in light DOM. In that case you need to
+             provide selector here. In most of the cases this will work.
+             */
+        },
+        colors: { // All Optional
+            button_div_bg_color: '303F9F', // Background color of button
+            button_anchor_color: 'FFFFFF', // Font color of Button
+            logout_anchor_color: '727272', // Font color of logout mark (The one with 'Login as other user'
+        },
+    }).init();
+
+</script>
+
 <script type="text/javascript">
 	$.material.init()
 </script>
