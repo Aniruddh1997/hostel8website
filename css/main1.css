@@ -1803,12 +1803,12 @@ ul.breadcrumb {
 }
 
 #co_gsec{
-    background-image:url('../images/mayank.jpg');
+    background-image:url('../images/rajesh.jpg');
     background-size: 200px 200px;
 }
 
 #co_sport{
-    background-image:url('../images/praveen.jpg');
+    background-image:url('../images/aniruddh.jpg');
     background-size: 200px 200px;
 }
 
@@ -1818,22 +1818,27 @@ ul.breadcrumb {
 }
 
 #co_maint{
-    background-image:url('../images/praveen.jpg');
+    background-image:url('../images/manish.jpg');
     background-size: 200px 200px;
 }
 
 #co_mess{
-    background-image:url('../images/mayank.jpg');
+    background-image:url('../images/prashant.jpg');
     background-size: 200px 200px;
 }
 
 #co_cult{
-    background-image:url('../images/praveen.jpg');
+    background-image:url('../images/prabhav.jpg');
     background-size: 200px 200px;
 }
 
 #co_comp{
-    background-image:url('../images/mayank.jpg');
+    background-image:url('../images/praveen.jpg');
+    background-size: 200px 200px;
+}
+
+#co_nom{
+    background-image:url('../images/anubhav.jpg');
     background-size: 200px 200px;
 }
 
@@ -1893,7 +1898,7 @@ ul.ch-grid{
 }
 
 #main_header{
-  background: #ddd;
+  background: #fff;
 }
 
 #accordion .panel-title{
@@ -1932,3 +1937,7 @@ tr:nth-child(even) {
   line-height: 50px;
 }
 
+.ch-thumb img{
+  width: 220px;
+  height: 220px;
+}
